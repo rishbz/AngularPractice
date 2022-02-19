@@ -1,0 +1,18 @@
+<div>
+    <tr>
+    <button (click)="toggle()">Display Details</button>
+
+    <p id="h1" [hidden]="showme" style="background-color: aquamarine;">Displaying Password!</p>
+    </tr>
+</div>
+
+<div>
+    <table>
+    <tr>
+        <p id="h2" *ngIf="showme" style="background-color: violet;">HERE.....ss</p>
+    </tr>
+    <tr style="background-color: brown;">
+        <assignment3 *ngFor="let server of arrayOfData"></assignment3>
+    </tr>
+    </table>
+</div>

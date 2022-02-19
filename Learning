@@ -1,0 +1,40 @@
+Property binding is done on property of html element.
+
+Ex: <button [disabled]="typescriptVariable" > </buttton>
+Please note: We didnt use {{}} inside the property so do not confuse string interpolation with property binding.
+2nd Ex: <button innerText="valueComingFromTypeScriptFile"></button>
+
+String interpolation is done outside the template in the DOM. If you want o change property of element, then use property binding. If u just wana
+print value directly in html page then use string interpolation:
+
+Ex: {{typescriptVariable}} in .html template page :- 
+
+ng serve :
+Use ng serve to run the angular wesbite.
+
+*ngIf - For conditional workflows: it is a structural direective because it can change DOM itself.
+Ex: <button *ngIf ="tsFileMethodTrue()" [disabled]="true">Show on condition </Button> 
+ngIf is a structural directive and * is always appended as a suffix.
+ng-template is a marker in a DOM which can be used to show during conditional checks . Ex: in else block.
+<p *ngIf = "tsMethodTrue(); else elseTemplate">My If block </p>
+<ng-template #elseTemplate>
+    <p>My else block</p>
+</ng-template>
+
+
+ngStyle:
+It is attribute directive. Can be used if i want to style my component based on some condition or value
+Ex:<p [ngStyle]="{backgroundColor: getColor()}"> I am changing color based on getColor() return value</p>
+
+Note: We have done property binding on this attribute/directive. Directive is simply ngStyle only.
+
+ngClass:
+Another attribute directive which allows us to dynamically add or remove CSS classes.
+<p [ngClass]="{online: statusValueFromTypeScriptFile ==='online'}"> Assign .online class to element p only if value
+of statusValueFromTypeScriptFile is returned "online"</p>
+Note: statusValueFromTypeScriptFile is a variable in typescript file. 
+
+*ngFOr - It is again structural directive because it can change DOM.
+
+<app-server *ngFor="let server of arrayInTsFile"></app-server>                                                                                                          
+arrayInTsFile is array on which this forloop will be iterated and then app-server html template will be shown visible on the DOM.

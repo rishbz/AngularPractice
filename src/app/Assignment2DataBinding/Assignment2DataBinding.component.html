@@ -1,0 +1,19 @@
+<div>
+    Helloss
+<table>
+    <tr>
+        <input type="text" [(ngModel)]="username" >
+    </tr>
+    <tr>
+        {{username}}
+    </tr>
+</table>
+
+<button  [disabled]="username===''" (click)="reset()">Button</button>
+
+<button *ngIf="!checkUName(); else DontShow">show</button>
+
+<ng-template #DontShow>
+    <button>Don't show button</button>
+</ng-template>
+</div>
